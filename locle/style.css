@@ -1,0 +1,454 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  
+}
+
+body {
+    
+}
+
+/* بداية تنسيقات header */
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: -1;
+    height: 55px;
+    
+   
+}
+h1{
+   position: relative;
+   font-size: 27px;
+   font-family: myfont;
+}
+
+@font-face {
+    font-family: myfont;
+
+         src: url('font1.ttf');
+      }
+h2{
+    font-family: myFont;
+   font-size: 24px;
+   margin-right: 10px;
+   
+}
+
+/* بداية تنسيقات menubar */
+
+ 
+ .menu-icon {
+            font-size: 27px;
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            font-weight: bold;
+            
+           
+        }
+        .menu {
+            display: none;
+            position: absolute;
+            background-color: aliceblue;
+            border-radius: 0px 16px 16px 0px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            transform: scale(0.9);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            text-align: right;
+            width: 50%;
+            
+            
+        }
+        .menu.show {
+            display: block;
+            opacity: 1;
+            transform: scale(1);
+            animation: ok 0.3s ease;
+            top: 45px;
+            z-index: 99;
+            
+            
+        }
+        @keyframes ok {
+            0%{
+                transform: scale(0.1);
+            }
+            100%{
+                transform: translateX(0);
+            }
+        }
+        .menu-yes {
+            color: black;
+            padding: 10px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 15px;
+        }
+        .menu-yes:hover {
+            color: blue;
+            
+        }
+        .menu-yes.active {
+           
+           
+           
+        }
+        #g:hover{
+            border-radius: 0px 15px 0px 0px;
+            
+        }
+        #v:hover{
+            border-radius: 0px 0px 15px 0px;
+        }
+        
+        /* icon */
+       #awesome {
+      position: relative;
+      top: 3px;
+      
+    }
+    /* نهاية تنسيق menubar */
+    
+    /* بداية تنسيقات الوضع الليلي */
+      body.light-mode {
+            background: aliceblue;
+            color: #333;
+        }
+
+        body.dark-mode {
+            background-color: #2C485E;
+            color: skyblue;
+        }
+        body.dark-mode .nav-item{
+            color: currentColor;
+        }
+        body.dark-mode .nav-item:hover{
+            color: #f1c40f;
+        }
+        body.dark-mode .marquis{
+            border-bottom: 1px solid currentColor;
+        }
+         body.dark-mode nav{
+             border-top: 1px solid currentColor;
+         }
+          body.dark-mode .slider-container{
+              border: 2px solid currentColor;
+          }
+       .darkmode{
+  margin-right: 7px;
+ 
+   
+}
+
+.checkbox {
+  opacity: 0;
+  position: absolute;
+ 
+}
+
+.checkbox-label {
+  background-color: #111;
+  width: 44px;
+  height: 22px;
+  border-radius: 50px;
+  position: relative;
+  padding: 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#fa-moon {
+    margin-top: 4px;
+    
+    
+}
+
+#fa-sun {
+margin-top: 4px;
+
+}
+
+.checkbox-label .ball {
+  background-color: #e0ebeb;
+  width: 21px;
+  height: 21px;
+  position: absolute;
+  left: -1px;
+  top: 1px;
+  border-radius: 50%;
+  transition: transform 0.2s linear;
+  border: 1px solid black;
+}
+
+.checkbox:checked + .checkbox-label .ball {
+  transform: translateX(24px);
+}
+
+    /* نهايةتنسيقات الوضع الليلي */
+    
+    /* بداية تنسيقات tooltip */
+          .tool1 {
+         
+      }
+      #tooltip {
+          /* helps position the tooltip content */
+         
+      }
+      .tooltip-content {
+         color: black;
+         text-shadow: 2px 0px 4px white;
+         background: aliceblue;
+         padding: 3px;
+         border-radius: 5px;
+         visibility: hidden; /* hides the tooltip content */
+         /* positions the tooltip content */
+         position: absolute;
+         z-index: 1;
+         text-align: center;
+         width: 165px;
+         transform: translateY(-70px);
+         left: 105%;
+         padding: 5px;
+         outline: 1.5px groove blue;
+         
+      }
+      #tooltip:hover > .tooltip-content {
+         visibility: visible; /* shows the tooltip content on mouse over */
+      }
+      #tooltip > .tooltip-content::after {
+         content: " ";
+         position: absolute;
+         top: 50%;
+         right: 100%;
+         margin-top: -5px;
+         border: 8px solid transparent;
+         border-right-color: blue;
+      }
+    /*  نهاية تنسيقات header*/
+    
+    /* تنسيقات عنصر marquis */
+        .marquis{
+            font-weight: bold;
+            border-radius: 0px 0px 15px 15px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+         
+     
+        }
+        
+        
+        /* بداية تنسيقات slider images */
+        .slider-container {
+            overflow: hidden;
+            border: 2px solid #ddd;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            margin: 10px auto;
+            width: 97%; /* Adjust the width as needed */
+            max-width: 800px; 
+            /* Maximum width for larger screens */
+            box-sizing: border-box;
+            border: 2px groove whitesmoke;
+        }
+
+        .slider {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slide {
+            min-width: 100%;
+             /* Each slide takes full width of the container */
+            height: 150%;
+            object-fit: cover; 
+            /* Scale the image to cover the container */
+        }
+        img{
+            
+        }
+        /* نهاية تنسيقات images slider */
+        
+
+/* بداية تنسيقات ادخال الكرت */
+  .ok1 {
+            text-align: center;
+            padding-top: 5px;
+            padding-bottom: 10px;
+            border: 2px double;
+            font-weight: bold;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            margin: 10px auto;
+            width: 97%;
+            max-width: 800px;
+            box-sizing: border-box;
+            border: 1px solid;
+        }
+        .enter1 {
+            font-size: 20px;
+            border-bottom: 1px dashed;
+        }
+        .textbox {
+            text-align: center;
+            font-size: 20px;
+            height: 40px;
+            font-weight: bold;
+            color: brown;
+            border: 2px solid goldenrod;
+            border-radius: 12px;
+            background: #e0ebeb;
+            cursor: text;
+        }
+        
+        .button1 {
+            background: steelblue;
+            color: white;
+            text-align: center;
+            border-radius: 24px;
+            position: relative;
+            padding: 7px 40px;
+            border: none;
+            transform: rotatex(10deg);
+            transition: background-color 0.3s;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: bold;
+            border-bottom: 2px solid goldenrod;
+
+        }   
+        .button1:hover {
+            background-color: goldenrod;
+            color: white;
+            transform: translate(2px, 2px);
+            /*box-shadow: 2px 2px 5px;*/
+        }
+/* نهاية تنسيقات ادخال الكرت */
+
+        /* بداية تنسيقات عنصر alright مع ايقونة ⋮ */
+
+
+         .alright{
+            display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: -1;
+    height: 55px;
+    border-bottom: 1px solid ;
+   
+        }
+        .bags {
+            font-size: 27px;
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            font-weight: bold;
+            margin-left: 5px;
+            
+        }
+      
+        .Options {
+            display: none;
+            position: absolute;
+            box-shadow: 0px 0px 5px;
+            padding: 10px;
+            top: 8px;
+            border-radius: 0px 8px 8px 0px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            z-index: 5;
+            background: aliceblue;
+            text-align: right;
+            width: 40%;
+            transform: scale(1);
+            animation: yes 0.3s ease;
+            color: black;
+        }
+          @keyframes yes {
+            0%{
+                transform: translateX(-100px);
+            }
+            100%{
+                transform: translateX(0);
+            }
+        }
+        .Options ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        .Options ul li {
+            padding: 8px;
+            cursor: pointer;
+        }
+        .Options ul li:hover {
+            background-color: #444;
+        }
+        .bags:hover{
+            
+        }
+        /* نهاية تنسيقات menu icon */
+
+
+/* بداية تنسيق Tabs */
+
+       .navbar {
+            width: 100%;
+            position: fixed;
+            top: 80vh;
+            overflow: hidden;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.3);
+            border-radius: 24px 24px 0px 0px;
+            padding-top: 15px;
+            height: 130px;
+        }
+
+        .nav-tabs {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: space-between;
+            align-items: center;
+            
+
+        }
+
+        .nav-item {
+            font-size: 15px;
+            text-align: center;
+            cursor: pointer;
+            flex: 1;
+            padding: 10px;
+            font-weight: bold;
+            color: steelblue;
+            
+        }
+
+        .nav-item:hover {
+             transition: .3s ease-in;
+             transform: translatey(-20px);
+             color: navy;
+        }
+        
+
+        .tab-content {
+            display: none;
+            
+        }
+        /* نهاية تنيسق tabs */
+        
+@media only screen and (orientation: landscape) {
+          .navbar{
+            background: aliceblue;
+            position: relative;
+            margin-top: 35px;
+         }
+      }
+
